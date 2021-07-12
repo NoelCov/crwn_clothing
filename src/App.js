@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import "./App.css";
@@ -10,10 +11,11 @@ import CheckoutPage from "./pages/checkout/checkout.component";
 
 import Header from "./components/header/header.component";
 
+import {
+  auth,
+  createUserProfileDocument,
+} from "./firebase/firebase.utils";
 
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-
-import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selector";
 
